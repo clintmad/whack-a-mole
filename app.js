@@ -20,7 +20,7 @@ function startGame() {
     timeUp = false;
     score = 0;
     level = 1;
-    newTime = setTimeout(() => timeUp = true, 10000);
+    newTime = setTimeout(() => timeUp = true, 60000);
     peep();
 }
 
@@ -76,6 +76,7 @@ function whack(e) {
     score++;
     this.classList.remove('up');
     scoreBoard.textContent = score;
+    saveScore();
 }
 
 function saveScore() {
@@ -93,7 +94,6 @@ function loadScore() {
     if(localData){
         highscore = JSON.parse(localData);
         highscoreBoard[0].textContent = highscore;
-
     }
 }
 
