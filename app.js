@@ -52,14 +52,17 @@ function randomHole(holes) {
 
 function peep() {
     let time;
-    if (score >= 50) {
-        time = randomTime(75, 300);
+    if (score >= 45) {
+        time = randomTime(100, 300);
+        level = 4;
+    }else if (score >= 30 && score <= 44) {
+        time = randomTime(200, 500);
         level = 3;
-    } else if (score >= 25 && score <= 49) {
-        time = randomTime(125, 700);
+    } else if (score >= 15 && score <= 29) {
+        time = randomTime(300, 700);
         level = 2;
     } else {
-        time = randomTime(225, 1000);
+        time = randomTime(500, 1000);
         level = 1;
     }
     const hole = randomHole(holes);
